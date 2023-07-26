@@ -64,7 +64,7 @@ void *_realloc(void *ptr, size_t old_size, size_t new_size);
 int noninteractive(char *program, char *script);
 char *read_file(char *program, char *script);
 void read_error(ssize_t stat, int file, char *argv, char *name, char *buf);
-void create_message(char * message, char *command, char *arg);
+void create_message(char *message, char *command, char *arg);
 int unset_env(char **argv, char *name);
 int set_env(char **argv, char *name);
 int get_pos(char *env);
