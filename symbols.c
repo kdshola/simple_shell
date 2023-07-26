@@ -61,10 +61,10 @@ bool handle_symbol(char *name, char *input, int *exit_stat)
 int multiple(char *name, char *input, int flag)
 {
 	int (*fp)(char **, char *), exit_stat;
-	char *token = NULL, *delim = "||", **args = NULL, *tmp = input;
+	char *token = NULL, *delim = "||\n", **args = NULL, *tmp = input;
 
 	if (flag == 0)
-		delim = ";";
+		delim = ";\n";
 	token = strtok(input, delim);
 	while (token)
 	{
@@ -98,7 +98,7 @@ int multiple(char *name, char *input, int flag)
 int _and(char *name, char *input)
 {
 	int (*fp)(char **, char *), exit_stat;
-	char *token = NULL, *delim = "&&", **args = NULL, *tmp = input;
+	char *token = NULL, *delim = "&&\n", **args = NULL, *tmp = input;
 
 	token = strtok(input, delim);
 	while (token)
