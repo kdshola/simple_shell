@@ -18,7 +18,6 @@
 extern char **environ;
 
 void _eof(int status, const char *name, char **input);
-void _prompt(char *name);
 char *_getenv(const char *env);
 bool isprintable(char *str);
 char *_allocate(const char *name, char *input);

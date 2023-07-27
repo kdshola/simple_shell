@@ -32,7 +32,6 @@ bool isprintable(char *str)
 	for (i = 0; str[i]; i++)
 		if (str[i] >= 32)
 			return (true);
-	_putchar('\n');
 	return (false);
 }
 
@@ -104,7 +103,7 @@ int main(int argc __attribute__((unused)), char *argv[])
 	while (true)
 	{
 		if (isatty(0))
-			_prompt(argv[0]);
+			write(1, "$ ", 2);
 		input_read = getline(&user_input, &buffer_size, stdin);
 		if (input_read == -1)
 			_eof(input_read, argv[0], &user_input);
