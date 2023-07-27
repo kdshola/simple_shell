@@ -97,10 +97,14 @@ int main(int argc __attribute__((unused)), char *argv[])
 
 	init_environ(argv[0]);
 	if (argv[1])
+	{
 		child_hex = noninteractive(argv[0], argv[1]);
+		return (child_hex);
+	}
 	while (true)
 	{
-		_prompt(argv[0]);
+		if (isatty(0))
+			_prompt(argv[0]);
 		input_read = getline(&user_input, &buffer_size, stdin);
 		if (input_read == -1)
 			_eof(input_read, argv[0], &user_input);
