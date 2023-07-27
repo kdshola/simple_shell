@@ -122,7 +122,8 @@ int run_binary(char **binary, char *program_name, char *input)
 			child_hex = WEXITSTATUS(status);
 			return (child_hex);
 		}
-		(print_error(binary[0], program_name), child_hex = -1);
+		print_error(binary[0], program_name);
+		child_hex = errno;
 	}
 	return (child_hex);
 }
