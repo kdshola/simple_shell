@@ -42,6 +42,7 @@ bool isprintable(char *str)
  */
 char *_allocate(const char *name, char *input)
 {
+	size_t i = 0;
 	char *dup = NULL;
 
 	dup = malloc(sizeof(char) * (_strlen(input) + 1));
@@ -49,6 +50,8 @@ char *_allocate(const char *name, char *input)
 	{
 		_eof(2, name, &input);
 	}
+	for (i = 0; i < _strlen(input); i++)
+		dup[i] = '\0';
 	return (dup);
 }
 
