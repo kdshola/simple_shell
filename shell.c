@@ -14,7 +14,6 @@ bool is_echo(char **argv, int exit_stat, int *ex_stat)
 		m_echo(argv, exit_stat);
 		free_vectors(argv);
 		*ex_stat = 0;
-		_putchar('\n');
 		return (true);
 	}
 	return (false);
