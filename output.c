@@ -25,28 +25,6 @@ void _puts(char *str)
 }
 
 /**
- * _prompt - prints prompt to stdout
- * @name: program name
- * Return: void
- */
-void _prompt(char *name)
-{
-	char prompt[] = "$ ";
-	int written_chars = 0;
-	char error_message[50];
-
-	written_chars = write(STDOUT_FILENO, prompt, 2);
-	if (written_chars == -1)
-	{
-		_strcat(error_message, name);
-		_strcat(error_message, ": ");
-		_strcat(error_message, "write");
-		perror(error_message);
-		written_chars = write(STDOUT_FILENO, prompt, 2);
-	}
-}
-
-/**
  * print_error - Prints error message
  * @cause: cause of error
  * @program: program name
